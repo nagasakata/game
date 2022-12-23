@@ -1,0 +1,13 @@
+class Attack():
+    def __init__(self, turn_player, target):
+        self.turn_player = turn_player
+        self.target = target
+
+    def do_attack(self):
+        damage = self.turn_player.get_attack() - self.target.get_difence()
+        self.target.set_hp(self.target.get_hp() - damage)
+
+        if self.target.get_hp() <= 0:
+            return True
+        else:
+            return False
